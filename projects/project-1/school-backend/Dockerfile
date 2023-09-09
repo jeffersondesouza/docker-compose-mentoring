@@ -1,0 +1,9 @@
+FROM node:18-alpine
+WORKDIR /app-node
+ARG BUILD_PORT=8080
+ENV PORT=$BUILD_PORT
+EXPOSE $BUILD_PORT
+COPY . .
+RUN yarn
+ENTRYPOINT yarn start
+
