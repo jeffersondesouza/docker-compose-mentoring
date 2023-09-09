@@ -1,0 +1,3 @@
+- Frontend in React
+- Backend in Node
+- Database in MySQL
