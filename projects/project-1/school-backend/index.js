@@ -1,9 +1,17 @@
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
-app.use(bodyParser());
+const allowedOrigins = ["http://localhost:3000"];
+
+const options = {
+  origin: allowedOrigins,
+};
+
+app.use(cors(options));
+app.use(express.json());
 
 app.get("/", (_req, res) => {
   res.json({
@@ -26,7 +34,7 @@ app.get("/classes", (_req, res) => {
       name: "Upper 1",
     },
     {
-      id: "3",
+      id: "4",
       name: "Upper 2",
     },
   ]);
