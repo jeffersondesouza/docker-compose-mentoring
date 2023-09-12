@@ -1,0 +1,20 @@
+services:
+  school-backend:
+    image: school-backend:1.0
+    container_name: school_backend
+    networks: 
+      - school-network
+    ports:
+      - 8080:8080
+
+  school-frontend:
+    image: school-frontend:1.0
+    container_name: school_frontend
+    networks: 
+      - school-network
+    ports:
+      - 3000:3000
+
+networks:
+    school-network:
+      driver: bridge
